@@ -1,0 +1,12 @@
+.large-image {
+  height: 28rem;
+  width: 60rem;
+  object-fit: cover; /* or contain, depending on your design */
+}
+
+@media (max-width: 768px) {
+  .large-image {
+    height: 25rem;
+    width: 20rem;
+  }
+}

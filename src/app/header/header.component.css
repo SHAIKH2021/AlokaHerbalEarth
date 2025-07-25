@@ -1,0 +1,39 @@
+/* Import the Playfair Display font */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+.custom-navbar {
+  background-color: #004d00 !important; /* Full green */
+  border-top: 8px solid #d4af37;       /* Gold top line */
+  border-bottom: 4px solid #d4af37;    /* Gold bottom line */
+  padding: 10px 0;
+}
+
+.custom-brand {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  text-decoration: none;
+}
+
+.aloka-text {
+  font-size: 32px;
+  font-weight: 700;
+  background: linear-gradient(to right, #ffd700, #d4af37); /* Gold gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: block;
+  line-height: 1;
+}
+
+.herbal-earth {
+  font-size: 12px;
+  color: #f5deb3;
+  letter-spacing: 2px;
+}
+
+.text-golden{
+  color: #d4af37 !important;
+}
+
+.text-golden:hover{
+  color: #f5deb3 !important;
+}
