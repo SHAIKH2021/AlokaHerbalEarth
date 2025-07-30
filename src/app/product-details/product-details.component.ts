@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { FormsModule , NgForm} from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import emailjs from 'emailjs-com';
 
 @Component({
@@ -22,7 +22,7 @@ export class ProductDetailsComponent {
   ];
   isMatched: any = {};
 
-  constructor(private http:HttpClient){};
+  constructor(private http: HttpClient) {}
 
   increaseQty() {
     this.quantity++;
@@ -36,7 +36,7 @@ export class ProductDetailsComponent {
 
   onSizeChange(event: Event): void {
     let value = String((event.target as HTMLSelectElement).value);
-    this.size= value;
+    this.size = value;
     this.isMatched = this.sizeArray.find((x: any) => x.size == value);
     this.unitPrice = this.isMatched ? this.isMatched.price : this.unitPrice;
     this.updateTotalPrice();
@@ -57,30 +57,53 @@ export class ProductDetailsComponent {
   }
 
   onSubmit(form: NgForm) {
-      if (form.invalid) return;
+    if (form.invalid) return;
 
-      const { name, email, phone, address , message} = form.value;
-      let type : string = "buy";
-      // 1. Send Email via EmailJS
-      emailjs.send('service_s68lc7e', 'template_3zwp4eb', form.value, 'mfHdqYCxdHvNZilBu')
-        .then(() => {
-          alert('Request sent successfully!');
+    const { name, email, phone, address, message } = form.value;
+    let type: string = 'buy';
+    let _message: any = '';
+    let userInfo = {
+      quantity: this.quantity,
+      size: this.size,
+      totalPrice: this.totalPrice,
+      address: address,
+    };
+    _message = `Hi my name is ${name}\nI want Aloka Herbal Earth oil\n My order details are as:\nQuantity: ${userInfo.quantity} / ${userInfo.size}\nTotal price: ${userInfo.totalPrice}/-\nPhone no:${phone}\nAddress: ${userInfo.address}`;
+    // 1. Send Email via EmailJS
+    emailjs
+      .send(
+        'service_s68lc7e',
+        'template_3zwp4eb',
+        {
+          name: `${name}`,
+          title: `Order for Aloka Herbal Earth`, // pass name from form
+          message: `${_message}`, // custom formatted message
+        },
+        'mfHdqYCxdHvNZilBu'
+      )
+      .then(() => {
+        alert('Request sent successfully!');
 
-          let userInfo = { quantity : this.quantity, size : this.size, totalPrice : this.totalPrice , address : address }
+        // Encode message for URL
+        const encodedMessage = encodeURIComponent(_message);
 
-          // 2. Send WhatsApp message via backend
-          this.http.post('http://localhost:3000/send-whatsapp', { name, phone , type , userInfo})
-            .subscribe({
-              next: (res: any) => {
-                console.log('Successfully placed an order soon we will reach to you.:', res);
-                alert('!');
-              },
-              error: (err) => {
-                console.error('Successfully placed an order please enter valid WhatsApp number:', err);
-              }
-            });
+        // Replace with your WhatsApp business/personal number
+        const phoneNumber = '916363298244';
 
-          form.resetForm();
-        });
-    }
+        window.location.href = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+        // 2. Send WhatsApp message via backend
+        // this.http.post('http://localhost:3000/send-whatsapp', { name, phone , type , userInfo})
+        //   .subscribe({
+        //     next: (res: any) => {
+        //       console.log('Successfully placed an order soon we will reach to you.:', res);
+        //       alert('!');
+        //     },
+        //     error: (err) => {
+        //       console.error('Successfully placed an order please enter valid WhatsApp number:', err);
+        //     }
+        //   });
+
+        form.resetForm();
+      });
+  }
 }

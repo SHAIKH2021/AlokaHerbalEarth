@@ -51,31 +51,31 @@
       <div class="mt-4">
         <div class="row justify-content-center">
           <form #buyForm="ngForm" (ngSubmit)="onSubmit(buyForm)">
-            <div class="col-lg-8 col-xl-7">
+            <div class="col-lg-12 col-xl-12">
             <!-- Name input -->
             <div class="form-floating mb-3">
-              <input class="form-control" id="name" name="name" type="text" ngModel required
+              <input class="form-control input-text" id="name" name="name" type="text" ngModel required
                 placeholder="Enter your name..." />
               <label for="name">Full name</label>
             </div>
 
             <!-- Email input -->
             <div class="form-floating mb-3">
-              <input class="form-control" id="email" name="email" type="email" ngModel required
+              <input class="form-control input-text" id="email" name="email" type="email" ngModel required
                 placeholder="name@example.com" />
               <label for="email">Email address</label>
             </div>
 
             <!-- Phone number input -->
             <div class="form-floating mb-3">
-              <input class="form-control" id="phone" name="phone" type="tel" ngModel required
+              <input class="form-control input-text" id="phone" name="phone" type="tel" ngModel required
                 placeholder="(123) 456-7890" />
               <label for="phone">Phone number</label>
             </div>
 
             <!----Address-->
             <div class="form-floating mb-3">
-              <input class="form-control" id="email" name="address" type="address" ngModel required
+              <input class="form-control input-text" id="email" name="address" type="address" ngModel required
                 placeholder="Enter address" />
               <label for="address">Address</label>
             </div>

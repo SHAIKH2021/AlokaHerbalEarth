@@ -1,15 +1,30 @@
 <header class="masthead bg-primary text-white text-center">
-    <div class="container d-flex align-items-center flex-column">
-      <img class="masthead-avatar mb-3 large-image" src="assets/img/AlokaHearbalEarthMain.jpeg" alt="AlokaEarth" />
-      <!-- <h1 class="masthead-heading text-uppercase mb-0 text-black-50">Aloka Herbal Earth</h1> -->
-      <div class="divider-custom divider-light">
-        <!-- <div class="divider-custom-icon"><i class="fas fa-star"></i></div> -->
-        <div class="divider-custom-line"></div>
+  <div class="container d-flex align-items-center flex-column">
+
+    <!-- Image Slider -->
+    <div class="image-slider" #slider>
+      <!-- Left Arrow -->
+      <button class="arrow left" (click)="prevSlide()">&#10094;</button>
+
+      <div class="slider-track" #track>
+        <img src="assets/img/AlokaHearbalEarthMain.jpeg" class="large-image" alt="Image 1" />
+        <img src="assets/img/AlokaHerbalEarthMain1.jpeg" class="large-image" alt="Image 2" />
+        <img src="assets/img/AlokaHerbalEarthMain2.jpeg" class="large-image" alt="Image 3" />
       </div>
-      <!-- Masthead Subheading-->
-      <p class="masthead-subheading font-weight-light mb-0 text-secondary">Zeal and Feel From Earth
-Eternal Akshayanidi for Root and Smooth Hair by Aloka</p>
+
+      <!-- Right Arrow -->
+      <button class="arrow right" (click)="nextSlide()">&#10095;</button>
     </div>
-  </header>
-  <app-products></app-products>
-  <app-contact></app-contact>
+
+    <div class="divider-custom divider-light">
+      <div class="divider-custom-line"></div>
+    </div>
+
+    <p class="masthead-subheading font-weight-light mb-0 text-secondary">
+      Zeal and Feel From Earth Eternal Akshayanidi for Root and Smooth Hair by Aloka
+    </p>
+  </div>
+</header>
+
+<app-products></app-products>
+<app-contact></app-contact>

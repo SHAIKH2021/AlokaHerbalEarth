@@ -1,7 +1,7 @@
 .large-image {
   height: 28rem;
   width: 60rem;
-  object-fit: cover; /* or contain, depending on your design */
+  object-fit: cover;
 }
 
 @media (max-width: 768px) {
@@ -9,4 +9,53 @@
     height: 25rem;
     width: 20rem;
   }
+  .image-slider{
+    height: 25rem !important;
+    width: 20rem !important;
+  }
 }
+
+
+.image-slider {
+  position: relative;
+  width: 53rem;
+  height: 28rem;
+  overflow: hidden;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.image-slider img {
+  object-fit: cover;
+  width: 100%;  /* Let .large-image decide width */
+  height: 28rem;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
+
+
