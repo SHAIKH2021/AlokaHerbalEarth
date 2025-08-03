@@ -12,10 +12,6 @@ import emailjs from 'emailjs-com';
 export class ContactComponent {
   constructor(private http: HttpClient) {}
 
-  // const serviceID = 'service_s68lc7e';
-  // const templateID = 'template_3zwp4eb';
-  // const publicKey = 'mfHdqYCxdHvNZilBu';
-
   onSubmit(form: NgForm) {
     if (form.invalid) return;
 
