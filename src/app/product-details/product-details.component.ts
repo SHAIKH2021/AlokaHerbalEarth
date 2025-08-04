@@ -36,8 +36,8 @@ export class ProductDetailsComponent {
 
   onSizeChange(event: Event): void {
     let value = String((event.target as HTMLSelectElement).value);
-    this.size = value;
-    this.isMatched = this.sizeArray.find((x: any) => x.size == value);
+    this.isMatched = this.sizeArray.find((x: any) => x.price == value);
+    this.size = this.isMatched ? this.isMatched.size : this.size;
     this.unitPrice = this.isMatched ? this.isMatched.price : this.unitPrice;
     this.updateTotalPrice();
   }
@@ -46,15 +46,6 @@ export class ProductDetailsComponent {
     this.totalPrice = this.quantity * this.unitPrice;
   }
 
-  sendWhatsAppMessage(): void {
-    const phoneNumber = '917738604742';
-    const message = encodeURIComponent(
-      `Hello! I want to buy aloka herbal oil's ${this.quantity} bottel of ${this.isMatched.size} size with ${this.totalPrice} ruppes details about me is as : `
-    );
-    const url = `https://wa.me/${phoneNumber}?text=${message}`;
-
-    window.open(url, '_blank');
-  }
 
   onSubmit(form: NgForm) {
     if (form.invalid) return;
