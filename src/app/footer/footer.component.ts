@@ -14,7 +14,7 @@ export class FooterComponent {
       window.open("https://www.instagram.com/aloka_herbal_earth?utm_source=qr&igsh=cnpjcXpyaXNtNjBu");
     }
     else if (key=="facebook"){
-      window.open("https://www.facebook.com/share/1GB5KHV1Qf/");
+      window.open("https://www.facebook.com/share/1FiZTACD23/");
     }
   }
 }

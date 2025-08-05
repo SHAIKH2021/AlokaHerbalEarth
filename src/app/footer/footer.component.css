@@ -1,41 +1,56 @@
+/* Default - Mobile first (below 768px) */
 .footer {
   background-color: #004d00;
   color: #f5deb3;
-  padding: 60px 0 40px;
-
-  h4 {
-    color: #d4af37;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    font-size: 16px;
-  }
-
-  p {
-    font-size: 14px;
-  }
-
-  .btn-social {
-    display: inline-block;
-    border: 1px solid #d4af37;
-    color: #d4af37;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    margin: 0 5px;
-    text-align: center;
-    transition: all 0.3s ease;
-
-    &:hover {
-      background-color: #d4af37;
-      color: #002a00;
-    }
-  }
+  padding: 10px 0 10px;
 }
+
+/* Footer heading */
+.footer h4 {
+  color: #d4af37;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+/* Footer paragraph */
+.footer p {
+  font-size: 14px;
+}
+
+/* Social button styles */
+.footer .btn-social {
+  display: inline-block;
+  border: 1px solid #d4af37;
+  color: #d4af37;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  margin: 0 5px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.footer .btn-social:hover {
+  background-color: #d4af37;
+  color: #002a00;
+}
+
 
 .copyright {
   background-color: #002a00;
   color: #f5deb3;
-  padding: 12px 0;
+  padding: 4px 0;
   font-size: 13px;
+}
+
+/* Desktop / Tablet styles (768px and above) */
+@media (min-width: 768px) {
+  .footer {
+    padding: 60px 0 40px;
+  }
+  .copyright {
+  padding: 12px 0;
+}
 }
