@@ -2,29 +2,28 @@
   <div class="container d-flex align-items-center flex-column">
 
     <!-- Image Slider -->
-    <div class="image-slider" #slider>
-      <!-- Left Arrow -->
-      <button class="arrow left" (click)="prevSlide()">&#10094;</button>
-
-      <div class="slider-track" #track>
-        <img src="assets/img/AlokaHearbalEarthMain.jpeg" class="large-image" alt="Image 1" />
-        <img src="assets/img/AlokaHerbalEarthMain1.jpeg" class="large-image" alt="Image 2" />
-        <img src="assets/img/AlokaHerbalEarthMain2.jpeg" class="large-image" alt="Image 3" />
+    <div class="image-slider mb-4" #slider>
+      <div class="slider-track">
+        <img src="assets/img/AlokaHerbalEarthMain.jpeg" class="large-image" alt="Image 1" />
+        <!-- <img src="assets/img/AlokaHerbalEarthMain1.jpeg" class="large-image" alt="Image 2" /> -->
+        <!-- <img src="assets/img/AlokaHerbalEarthMain2.jpeg" class="large-image" alt="Image 3" /> -->
       </div>
-
-      <!-- Right Arrow -->
-      <button class="arrow right" (click)="nextSlide()">&#10095;</button>
     </div>
 
-    <div class="divider-custom divider-light">
+    <!-- <div class="divider-custom divider-light">
       <div class="divider-custom-line"></div>
-    </div>
+    </div> -->
 
-    <p class="masthead-subheading font-weight-light mb-0 text-secondary">
+    <div class="card">
+      <div class="card-body">
+        <p class="masthead-subheading font-weight-light mb-0 text-secondary">
       Zeal and Feel From Earth Eternal Akshayanidi for Root and Smooth Hair by Aloka
     </p>
+      </div>
+    </div>
   </div>
 </header>
 
 <app-products></app-products>
+<app-product-benefits></app-product-benefits>
 <app-contact></app-contact>

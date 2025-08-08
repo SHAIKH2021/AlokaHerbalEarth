@@ -1,50 +1,92 @@
 <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
   <section class="page-section" id="contact">
     <div class="container">
-      <!-- Contact Section Heading -->
       <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
         Contact Me
       </h2>
 
-      <!-- Icon Divider -->
-      <div class="divider-custom">
-        <div class="divider-custom-line"></div>
-      </div>
-
-      <!-- Contact Section Form -->
       <div class="row justify-content-center">
         <div class="col-lg-8 col-xl-7">
           <!-- Name input -->
           <div class="form-floating mb-3">
-            <input class="form-control input-text" id="name" name="name" type="text" ngModel required
-              placeholder="Enter your name..." />
+            <input
+              class="form-control input-text"
+              id="name"
+              name="name"
+              type="text"
+              ngModel
+              required
+              placeholder="Enter your name..."
+              #name="ngModel"
+            />
             <label for="name">Full name</label>
+            <div *ngIf="name.invalid && name.touched" class="text-danger small">
+              Name is required
+            </div>
           </div>
 
           <!-- Email input -->
           <div class="form-floating mb-3">
-            <input class="form-control input-text" id="email" name="email" type="email" ngModel required
-              placeholder="name@example.com" />
+            <input
+              class="form-control input-text"
+              id="email"
+              name="email"
+              type="email"
+              ngModel
+              required
+              placeholder="name@example.com"
+              email
+              #email="ngModel"
+            />
             <label for="email">Email address</label>
+            <div *ngIf="email.invalid && email.touched" class="text-danger small">
+              Enter a valid email
+            </div>
           </div>
 
           <!-- Phone number input -->
           <div class="form-floating mb-3">
-            <input class="form-control input-text" id="phone" name="phone" type="tel" ngModel required
-              placeholder="(123) 456-7890" />
+            <input
+              class="form-control input-text"
+              id="phone"
+              name="phone"
+              type="tel"
+              ngModel
+              required
+              placeholder="(123) 456-7890"
+              pattern="[0-9]{10}"
+              #phone="ngModel"
+            />
             <label for="phone">Phone number</label>
+            <div *ngIf="phone.invalid && phone.touched" class="text-danger small">
+              Enter a valid phone number
+            </div>
           </div>
 
           <!-- Message input -->
           <div class="form-floating mb-3">
-            <textarea class="form-control input-text" id="message" name="message" ngModel required
-              placeholder="Enter your message here..." style="height: 10rem"></textarea>
+            <textarea
+              class="form-control input-text"
+              id="message"
+              name="message"
+              ngModel
+              required
+              placeholder="Enter your message here..."
+              style="height: 10rem"
+              #message="ngModel"
+            ></textarea>
             <label for="message">Message</label>
+            <div *ngIf="message.invalid && message.touched" class="text-danger small">
+              Message is required
+            </div>
           </div>
 
           <!-- Submit Button -->
-          <button class="btn btn-buy w-100 py-2" type="submit" style="
-    background-color: #004d00; color: white;">
+          <button
+            class="btn btn-buy w-100 py-2"
+            type="submit"
+            [disabled]="contactForm.invalid"
+          >
             Send
           </button>
         </div>

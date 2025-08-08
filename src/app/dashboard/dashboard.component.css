@@ -4,37 +4,58 @@
   object-fit: cover;
 }
 
+.image-slider {
+  position: relative;
+  width: 72rem;
+  height: 38rem;
+  overflow: hidden;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.image-slider img {
+  object-fit: cover;
+  width: 100%;  /* Let .large-image decide width */
+  height: 38rem;
+}
+
+.card{
+  border: none;
+  background-color: #f1d57d !important;
+  padding: 20px;
+  width: 72rem;
+}
+
+.card-body p{
+color: #176233 !important;
+}
+
 @media (max-width: 768px) {
   .large-image {
     height: 25rem;
     width: 20rem;
   }
   .image-slider{
-    height: 25rem !important;
-    width: 20rem !important;
+    height: 22rem !important;
+    width: 23rem !important;
   }
+
+  .image-slider img {
+  width: 25rem;  /* Let .large-image decide width */
+  height: 22rem;
 }
 
-
-.image-slider {
-  position: relative;
-  width: 53rem;
-  height: 28rem;
-  overflow: hidden;
-  border-radius: 5px;
-  margin-bottom: 1rem;
+.card{
+  width: auto;
 }
+}
+
 
 .slider-track {
   display: flex;
   transition: transform 0.5s ease-in-out;
 }
 
-.image-slider img {
-  object-fit: cover;
-  width: 100%;  /* Let .large-image decide width */
-  height: 28rem;
-}
 
 .arrow {
   position: absolute;

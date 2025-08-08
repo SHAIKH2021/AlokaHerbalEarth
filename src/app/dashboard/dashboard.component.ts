@@ -2,11 +2,12 @@ import { Component, ElementRef, ViewChild, AfterViewInit, OnDestroy } from '@ang
 import { ProductDetailsComponent } from "../product-details/product-details.component";
 import { ProductsComponent } from "../products/products.component";
 import { ContactComponent } from "../contact/contact.component";
+import { ProductBenefitsComponent } from "../product-benefits/product-benefits.component";
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [ProductDetailsComponent, ProductsComponent, ContactComponent],
+  imports: [ProductDetailsComponent, ProductsComponent, ContactComponent, ProductBenefitsComponent],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
