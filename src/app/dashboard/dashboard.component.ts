@@ -3,11 +3,12 @@ import { ProductDetailsComponent } from "../product-details/product-details.comp
 import { ProductsComponent } from "../products/products.component";
 import { ContactComponent } from "../contact/contact.component";
 import { ProductBenefitsComponent } from "../product-benefits/product-benefits.component";
+import { FeedbackComponent } from "../feedback/feedback.component";
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [ProductDetailsComponent, ProductsComponent, ContactComponent, ProductBenefitsComponent],
+  imports: [ProductDetailsComponent, ProductsComponent, ContactComponent, ProductBenefitsComponent, FeedbackComponent],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })

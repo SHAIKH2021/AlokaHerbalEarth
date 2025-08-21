@@ -1,0 +1,15 @@
+.scroll-container {
+  display: flex;
+  gap: 2rem; /* Bootstrap gap-5 */
+  overflow-x: auto;   /* allow manual scroll */
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* hide scrollbar in Firefox */
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none; /* hide scrollbar in Chrome/Edge */
+}
+
+.scroll-container > div {
+  flex-shrink: 0;
+}
