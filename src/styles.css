@@ -10925,8 +10925,8 @@ html {
 
 @media (min-width: 992px) {
   #mainNav {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    /* padding-top: 1rem;
+    padding-bottom: 1rem; */
     transition: padding-top 0.3s, padding-bottom 0.3s;
   }
   #mainNav .navbar-brand {

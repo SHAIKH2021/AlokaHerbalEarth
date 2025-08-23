@@ -13,3 +13,12 @@
 .scroll-container > div {
   flex-shrink: 0;
 }
+
+.card-img-top {
+  width: 100% !important;
+  height: 320px !important;   /* fixed height for all images */
+  object-fit: cover !important;  /* crop while keeping aspect ratio */
+  border-top-left-radius: 0.5rem !important; /* keep Bootstrap card rounding */
+  border-top-right-radius: 0.5rem !important;
+}
+

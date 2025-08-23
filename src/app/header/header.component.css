@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
 
 .custom-navbar {
-  background-color: #004d00 !important; /* Full green */
+  background-color: #074507 !important; /* Full green */
   border-top: 8px solid #d4af37;       /* Gold top line */
   border-bottom: 4px solid #d4af37;    /* Gold bottom line */
   padding: 10px 0;
@@ -36,4 +36,14 @@
 
 .text-golden:hover{
   color: #f5deb3 !important;
+}
+
+.header-img{
+  height: 74px
+}
+
+@media (max-width:768px){
+  .header-img{
+    height: 52px;
+  }
 }

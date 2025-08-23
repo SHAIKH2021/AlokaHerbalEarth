@@ -31,7 +31,7 @@ export class FeedbackComponent {
     // Auto scroll every 10 seconds
     setInterval(() => {
       this.autoScroll();
-    }, 2000);
+    }, 5000);
   }
 
   autoScroll() {
